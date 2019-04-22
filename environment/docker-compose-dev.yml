@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  database:
+    image: mysql:8.0.15
+    restart: always
+    container_name: geolocations_platform_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: geolocations_db
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: NY2+9C(F}b8wq_es
+    ports:
+      - "3306:3306"
+    security_opt:
+      - seccomp:unconfined
