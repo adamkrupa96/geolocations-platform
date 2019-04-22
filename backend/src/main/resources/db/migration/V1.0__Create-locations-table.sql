@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `locations`(
+    `id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(128),
+    `position` POINT NOT NULL SRID 4326,
+    SPATIAL INDEX(`position`)
+);
