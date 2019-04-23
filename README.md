@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Installation](#installation)
+* [Testing](#testing)
 * [Usage](#api-usage)
 * [License](#license)
 
@@ -43,7 +44,14 @@ cat >> .env <<EOF
 docker-compose -f docker-compose-prod.yml up -d
 
 ```
-Application will be started at 8080 port.
+Application will be started at port 8080.
+
+## Testing
+To run unit tests, type go the command line:
+```bash
+cd backend
+gradle clean test --info
+```
 
 ## API Usage
 
@@ -87,7 +95,6 @@ curl -X GET \
   'http://localhost:8080/api/locations/search/nearestPoint?latitude={latitude}&longitude={longitude}' \
   -H 'cache-control: no-cache'
 ```
-
 
 ## License
 [MIT](https://github.com/adamkrupa96/geolocations-platform/blob/master/LICENSE)
