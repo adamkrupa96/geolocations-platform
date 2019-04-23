@@ -6,6 +6,7 @@ import com.platform.geolocations.domain.dto.PositionDto;
 import com.platform.geolocations.domain.model.GeoLocation;
 import com.platform.geolocations.exception.ApiException;
 import com.platform.geolocations.exception.LocationsException;
+import com.platform.geolocations.exception.LocationsListNotProvidedException;
 import com.platform.geolocations.repository.GeoLocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class GeoLocationService {
         return geoLocationRepository
                 .findNearestLocationName(positionDto.getLatitude(), positionDto.getLongitude())
                 .orElseThrow(
-                    () -> new ApiException("Did not provide list of locations to compare.")
+                    () -> new LocationsListNotProvidedException()
                 );
     }
 

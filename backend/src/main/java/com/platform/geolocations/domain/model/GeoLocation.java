@@ -13,6 +13,7 @@ import org.locationtech.jts.geom.PrecisionModel;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "locations")
@@ -37,9 +38,12 @@ public class GeoLocation {
 
     public static GeoLocation from(LocationDto locationDto) {
         GeoLocation location = new GeoLocation();
-        location.setName(locationDto.getName());
+        location.setName(Objects.requireNonNull(locationDto.getName()));
 
-        Coordinate coordinate = new Coordinate(locationDto.getLongitude(), locationDto.getLatitude());
+        Coordinate coordinate = new Coordinate(
+                Objects.requireNonNull(locationDto.getLongitude()),
+                Objects.requireNonNull(locationDto.getLatitude()));
+
         Point position = geometryFactory.createPoint(coordinate);
         location.setPosition(position);
 
