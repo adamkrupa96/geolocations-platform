@@ -57,7 +57,7 @@ gradle clean test --info
 
 You can test this API with cURL.
 
-To save locations in DB:
+To save locations in database:
 ```cURL
 curl -X POST \
   http://localhost:8080/api/locations \
