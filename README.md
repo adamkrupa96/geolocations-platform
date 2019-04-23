@@ -4,7 +4,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Installation](#installation)
-* [Usage](#Usage)
+* [Usage](#api-usage)
+* [License](#license)
 
 ## General info
 The Java aplication - Geolocations platform - allows to find the nearest localization from those which has been added previously.
