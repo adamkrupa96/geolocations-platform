@@ -18,6 +18,6 @@ public class WktPointSerializer extends JsonSerializer<Point> {
     }
 
     private PositionDto getPosition(Coordinate coordinate) {
-        return new PositionDto(coordinate.x, coordinate.y);
+        return new PositionDto(coordinate.y, coordinate.x);
     }
 }
