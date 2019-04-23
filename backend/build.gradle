@@ -25,7 +25,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	compile group: 'org.hibernate', name: 'hibernate-spatial', version: '5.4.2.Final'
 	annotationProcessor 'org.projectlombok:lombok'
