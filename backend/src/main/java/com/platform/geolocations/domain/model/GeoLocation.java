@@ -27,7 +27,7 @@ public class GeoLocation {
     private String name;
 
     @NotNull
-    @Column(columnDefinition = "POINT NOT NULL SRID 4326")
+    @Column(columnDefinition = "GEOMETRY(POINT, 4326)")
     @JsonSerialize(using = WktPointSerializer.class)
     private Point position;
 
@@ -39,7 +39,7 @@ public class GeoLocation {
         GeoLocation location = new GeoLocation();
         location.setName(locationDto.getName());
 
-        Coordinate coordinate = new Coordinate(locationDto.getLatitude(), locationDto.getLongitude());
+        Coordinate coordinate = new Coordinate(locationDto.getLongitude(), locationDto.getLatitude());
         Point position = geometryFactory.createPoint(coordinate);
         location.setPosition(position);
 

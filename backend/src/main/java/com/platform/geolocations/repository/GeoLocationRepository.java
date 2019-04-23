@@ -14,7 +14,8 @@ public interface GeoLocationRepository extends JpaRepository<GeoLocation, Intege
 
     @Query(value = "SELECT name as locationName from locations " +
             "ORDER BY ST_Distance_Sphere(position, " +
-            "   ST_GeomFromText(CONCAT('Point(', :latitude, ' ', :longitude, ')'), 4326, 'axis-order=lat-long')) ASC " +
+            "   ST_GeomFromText(CONCAT('Point(', :latitude, ' ', :longitude, ')'), 4326, 'axis-order=lat-long')" +
+            ") ASC " +
             "LIMIT 1",
             nativeQuery = true)
     Optional<NearestLocation> findNearestLocationName(@Param("latitude") Double latitude, @Param("longitude") Double longitude);
