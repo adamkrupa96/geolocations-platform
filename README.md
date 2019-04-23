@@ -47,7 +47,7 @@ docker-compose -f docker-compose-prod.yml up -d
 Application will be started at port 8080.
 
 ## Testing
-To run unit tests, go the command line:
+To run unit tests, go to the command line:
 ```bash
 cd backend
 gradle clean test --info
