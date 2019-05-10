@@ -35,11 +35,11 @@ gradle build
 ./gradlew build (if you did not install gradle locally)
 
 cd ../environment
-cat >> .env <<EOF
-> DB_USER=your_user
-> DB_PASSWORD=your_db_password
-> DB_NAME=your_db_name
-> EOF
+cat >> .env << EOF
+DB_USER=your_user
+DB_PASSWORD=your_db_password
+DB_NAME=your_db_name
+EOF
 
 docker-compose -f docker-compose-prod.yml up -d
 
