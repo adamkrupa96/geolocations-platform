@@ -81,9 +81,9 @@ curl -X POST \
             "longitude": 22.024593
         },
         {
-        	"name": "Madrid",
-        	"latitude": 40.416961,
-        	"longitude": -3.703782
+            "name": "Madrid",
+            "latitude": 40.416961,
+            "longitude": -3.703782
         }
     ]
 }'
